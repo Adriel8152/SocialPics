@@ -10,6 +10,7 @@
     "tailwindcss": "npx tailwindcss -i ./src/input.css -o ./src/style.css --watch"
   },
   "dependencies": {
+    "@kyvg/vue3-notification": "^3.2.0",
     "@types/jsonwebtoken": "^9.0.6",
     "bootstrap-icons": "^1.11.3",
     "firebase": "^10.8.1",

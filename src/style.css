@@ -561,9 +561,8 @@ video {
   width: 3rem;
 }
 
-.w-min {
-  width: -moz-min-content;
-  width: min-content;
+.w-\[95\%\] {
+  width: 95%;
 }
 
 .w-full {
@@ -572,6 +571,10 @@ video {
 
 .min-w-\[inherit\] {
   min-width: inherit;
+}
+
+.max-w-96 {
+  max-width: 24rem;
 }
 
 .flex-col {
@@ -590,12 +593,12 @@ video {
   justify-content: center;
 }
 
-.gap-8 {
-  gap: 2rem;
-}
-
 .gap-4 {
   gap: 1rem;
+}
+
+.gap-8 {
+  gap: 2rem;
 }
 
 .rounded-3xl {
@@ -608,11 +611,6 @@ video {
 
 .border {
   border-width: 1px;
-}
-
-.border-gray-50 {
-  --tw-border-opacity: 1;
-  border-color: rgb(249 250 251 / var(--tw-border-opacity));
 }
 
 .border-gray-300 {
@@ -633,11 +631,6 @@ video {
 .bg-red-700 {
   --tw-bg-opacity: 1;
   background-color: rgb(185 28 28 / var(--tw-bg-opacity));
-}
-
-.bg-gray-200 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(229 231 235 / var(--tw-bg-opacity));
 }
 
 .bg-gradient-to-br {
@@ -663,6 +656,11 @@ video {
   padding: 3.5rem;
 }
 
+.px-3 {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
 .px-4 {
   padding-left: 1rem;
   padding-right: 1rem;
@@ -671,26 +669,6 @@ video {
 .py-2 {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
-}
-
-.px-5 {
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
-}
-
-.py-3 {
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
-}
-
-.px-3 {
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
-}
-
-.text-sm {
-  font-size: 0.875rem;
-  line-height: 1.25rem;
 }
 
 .shadow-md {
@@ -702,10 +680,6 @@ video {
 .outline-none {
   outline: 2px solid transparent;
   outline-offset: 2px;
-}
-
-.outline {
-  outline-style: solid;
 }
 
 * {
@@ -723,14 +697,25 @@ body {
   min-height: 100vh;
 }
 
-.placeholder\:text-gray-600::-moz-placeholder {
-  --tw-text-opacity: 1;
-  color: rgb(75 85 99 / var(--tw-text-opacity));
-}
-
-.placeholder\:text-gray-600::placeholder {
-  --tw-text-opacity: 1;
-  color: rgb(75 85 99 / var(--tw-text-opacity));
+.my-notification {
+  padding: 12px 24px;
+  margin: 8px;
+  border-radius: 4px;
+  border-width: 2px;
+  border-style: solid;
+  border-left-width: 6px;
+  border-left-style: solid;
+  cursor: pointer;
+  &.success {
+    background-color: #d1e7dd;
+    border-color: #81af9a;
+    color: #0a3622;
+  }
+  &.error {
+    background-color: #f2b8be;
+    border-color: #cf737c;
+    color: #6c2d33;
+  }
 }
 
 .placeholder\:text-gray-500::-moz-placeholder {
@@ -741,4 +726,12 @@ body {
 .placeholder\:text-gray-500::placeholder {
   --tw-text-opacity: 1;
   color: rgb(107 114 128 / var(--tw-text-opacity));
+}
+
+.disabled\:cursor-progress:disabled {
+  cursor: progress;
+}
+
+.disabled\:opacity-80:disabled {
+  opacity: 0.8;
 }

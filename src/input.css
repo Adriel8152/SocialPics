@@ -16,3 +16,26 @@ body {
 	min-width: 100vw;
 	min-height: 100vh;
 }
+
+.my-notification {
+	padding: 12px 24px;
+	margin: 8px;
+	border-radius: 4px;
+	border-width: 2px;
+	border-style: solid;
+	border-left-width: 6px;
+	border-left-style: solid;
+	cursor: pointer;
+	
+	&.success {
+		background-color: #d1e7dd;
+		border-color: #81af9a;
+		color: #0a3622;
+	}
+
+	&.error {
+		background-color: #f2b8be;
+		border-color: #cf737c;
+		color: #6c2d33;
+	}
+}

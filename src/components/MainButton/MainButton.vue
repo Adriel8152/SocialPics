@@ -25,7 +25,7 @@
 </script>
 
 <template>
-	<button :style="{backgroundColor: colorsStyles[props.nameColor].background, color: colorsStyles[props.nameColor].text}" class="py-2 px-4 rounded-3xl"><slot /></button>
+	<button :style="{backgroundColor: colorsStyles[props.nameColor].background, color: colorsStyles[props.nameColor].text}" class="py-2 px-4 rounded-3xl disabled:opacity-80 disabled:cursor-progress"><slot /></button>
 </template>
 
 <style scoped>
