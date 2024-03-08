@@ -1,9 +1,8 @@
 <script setup lang="ts">
-
 </script>
 
 <template>
-  <router-view />
+	<span>Registro</span>
 </template>
 
 <style scoped>

@@ -10,8 +10,10 @@
     "tailwindcss": "npx tailwindcss -i ./src/input.css -o ./src/style.css --watch"
   },
   "dependencies": {
+    "@types/jsonwebtoken": "^9.0.6",
     "bootstrap-icons": "^1.11.3",
     "firebase": "^10.8.1",
+    "jsonwebtoken": "^9.0.2",
     "vue": "^3.3.8",
     "vue-router": "^4.3.0"
   },
