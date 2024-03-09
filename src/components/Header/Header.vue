@@ -25,8 +25,8 @@ import { useRouter } from 'vue-router';
 			</span>
 		</div>
 		<div class="flex items-center gap-2 cursor-pointer relative" @click="submenuActive = !submenuActive">
-			<img class="w-8" v-if="userData.profileImg !== ''" :src="userData.profileImg" />
-			<img class="w-8" v-if="userData.profileImg === ''" :src="profileImg" />
+			<img class="w-8 aspect-square object-cover rounded-full" v-if="userData.profileImg !== ''" :src="userData.profileImg" />
+			<img class="w-8 aspect-square object-cover rounded-full" v-if="userData.profileImg === ''" :src="profileImg" />
 			<span> <i class="bi bi-caret-down-fill"></i> </span>
 
 			<div :style="{ display: submenuActive ? 'flex' : 'none' }" class="absolute top-[100%] right-0 flex-col bg-slate-50 w-40 border shadow-md hidden">

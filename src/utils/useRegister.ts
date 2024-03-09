@@ -1,5 +1,5 @@
 import { addDoc, collection, getDocs, query, where } from 'firebase/firestore';
-import db from '../../firebase/firestoreconfig';
+import { db } from '../../firebase/firestoreconfig';
 import { UserData } from './interfaces';
 
 interface Response {

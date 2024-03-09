@@ -4,8 +4,8 @@
 	import { MainButton, UnloggedInput } from '../../components';
 	import { ref } from 'vue';
 	import { useLogin } from '../../utils/useLogin';
-import { UserData } from '../../utils/interfaces';
-import { Notifications, useNotification } from '@kyvg/vue3-notification';
+	import { UserData } from '../../utils/interfaces';
+	import { Notifications, useNotification } from '@kyvg/vue3-notification';
 
 	const router = useRouter();
 	const username = ref('');

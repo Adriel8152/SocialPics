@@ -2,6 +2,7 @@
 import { initializeApp } from 'firebase/app';
 // Anteriormente importaba de firebase/firestore/lite, pero no funciona. Se debe importar de firebase/firestore.
 import { getFirestore } from 'firebase/firestore';
+import { getStorage } from 'firebase/storage';
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
@@ -18,5 +19,9 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 const db = getFirestore(app)
+const storage = getStorage(app);
 
-export default db;
+export {
+  db,
+  storage
+};

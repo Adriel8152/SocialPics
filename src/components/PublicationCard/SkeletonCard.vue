@@ -3,7 +3,7 @@
 
 <template>
 
-	<figure class="border border-gray-100 shadow rounded-md max-w-lg w-full  mx-auto overflow-hidden">
+	<figure class="border border-gray-100 shadow rounded-lg max-w-lg w-full mx-auto overflow-hidden">
 		<div class="w-full min-h-60 animate-pulse bg-slate-400 flex space-x-4"></div>
 		<figcaption class="flex flex-col p-4 gap-4">
 			<div class="grid gap-5 space-x-4 grid-cols-4">

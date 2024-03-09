@@ -2,14 +2,8 @@ import { useRouter } from "vue-router";
 import { store } from "../store/store";
 import { useToken } from "./useToken";
 import { collection, getDocs, query, where } from "firebase/firestore";
-import db from "../../firebase/firestoreconfig";
-
-interface UserData {
-	name: string,
-	email: string,
-	username: string,
-	profileImg: string,
-}
+import { db } from "../../firebase/firestoreconfig";
+import { UserData } from "./interfaces";
 
 interface Response {
 	type: 'error' | 'success' ,
@@ -23,6 +17,7 @@ export const useLogin = () => {
 
 	const login = (data: UserData) => {
 		const token = generateToken({
+			id: data.id,
 			name: data.name,
 			email: data.email,
 			username: data.username,
@@ -55,7 +50,10 @@ export const useLogin = () => {
 				return {
 					type: 'success',
 					message: 'Usuario encontrado',
-					data: querySnapshot?.docs[0].data(),
+					data: {
+						id: querySnapshot.docs[0].id,
+						...querySnapshot?.docs[0].data()
+					},
 				}
 			}
 		} catch(error: Response | any) {

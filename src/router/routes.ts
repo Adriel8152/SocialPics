@@ -57,14 +57,14 @@ const routes =  [
 				component: Create
 			},
 			{
-				path: '/edit',
+				path: '/edit:id',
 				name: 'Edit',
 				component: Edit
 			},
 			{
-				path: '/post',
+				path: '/post/:id',
 				name: 'Post',
-				component: Post
+				component: Post,
 			},
 			{
 				path: '/profile',
