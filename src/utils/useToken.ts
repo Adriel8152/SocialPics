@@ -10,7 +10,12 @@ export const useToken = () => {
 		return JSON.stringify(data);
 	}
 
+	const decodeToken = (data: string): UserData => {
+		return JSON.parse(data);
+	}
+
 	return {
 		generateToken,
+		decodeToken,
 	}
 }

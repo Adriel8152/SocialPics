@@ -1,2 +1,1 @@
-export { privateRoutes } from './privateRoutes.ts';
-export { publicRoutes } from './publicRoutes.ts';
+export { router } from './routes';

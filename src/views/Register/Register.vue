@@ -1,17 +1,16 @@
 <script setup lang="ts">
-	import { Ref, ref } from 'vue';
+	import { ref } from 'vue';
 	import { useRouter } from 'vue-router';
 	import instagramLogo from '../../assets/instagram-logo.png'
 	import { MainButton, UnloggedInput } from '../../components';
 	import { Notifications, useNotification } from '@kyvg/vue3-notification';
 	import { useRegister } from '../../utils/useRegister';
-	import { useToken } from '../../utils/useToken';
-import { store } from '../../store/store';
+	import { useLogin } from '../../utils/useLogin';
 
 	const router = useRouter();
 	const { notify } = useNotification();
 	const { checkEmail, checkUsername, checkPassword, checkName, registerUser } = useRegister();
-	const { generateToken } = useToken();
+	const { login } = useLogin();
 
 	
 	const loadingRegister = ref(false);
@@ -24,31 +23,18 @@ import { store } from '../../store/store';
 		username: '',
 		profileImg: '',
 	});
-
-	const handleTest = () => {
-		// props.isAuthenticated.value = !props.isAuthenticated.value;
-		
-		// console.log(props.isAuthenticated.value);
-		store.changeStatus();
-		console.log(store.isAuthenticated);
-	}
 	
 	const saveData = () => {
 		registerUser(registerFormValues.value)
 		.then((response) => {
 			if( response.type === 'error' ) throw new Error(response.message);
 			
-			const token = generateToken({
-				name: registerFormValues.value.name,
+			login({
 				email: registerFormValues.value.email,
-				username: `@${registerFormValues.value.username}`,
+				name: registerFormValues.value.name,
 				profileImg: registerFormValues.value.profileImg,
-			})
-
-			window.localStorage.setItem('accessToken', token);
-			
-			// props.isAuthenticated.value = !props.isAuthenticated.value;
-
+				username: registerFormValues.value.username,
+			})		
 		})
 		.catch(error => {
 			notify({ type: 'error', title: 'Error', text: error.message});
@@ -56,7 +42,9 @@ import { store } from '../../store/store';
 	}
 
 	
-	const handleSubmit = async () => {
+	const handleSubmit = async (e: any) => {
+		e.preventDefault();
+
 		loadingRegister.value = true;
 
 		const checkNameResp = checkName(registerFormValues.value.name)
@@ -106,7 +94,7 @@ import { store } from '../../store/store';
 <template>
 	<Notifications close-on-click position="top right" classes="my-notification" />
 
-	<div class="flex h-min flex-col justify-center items-center p-14 bg-gray-50 rounded-3xl shadow-md gap-8 w-[95%] max-w-96">
+	<form class="flex h-min flex-col justify-center items-center p-14 bg-gray-50 rounded-3xl shadow-md gap-8 w-[95%] max-w-96">
 		<img :src="instagramLogo" class="w-12" />
 
 		<div class="flex flex-col gap-4 w-full">
@@ -121,9 +109,7 @@ import { store } from '../../store/store';
 			<MainButton :disabled="loadingRegister" nameColor="coral" @click="handleSubmit">Crear cuenta</MainButton>
 			<MainButton nameColor="yellow" @click="router.push('/login')">Iniciar sesión</MainButton>
 		</div>
-
-		<button @click="handleTest">Test</button>
-	</div>
+	</form>
 </template>
 
 <style scoped>

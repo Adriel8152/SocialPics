@@ -1,8 +1,8 @@
 import { reactive } from 'vue'
 
 export const store = reactive({
-  isAuthenticated: false,
-	changeStatus() {
-		this.isAuthenticated = !this.isAuthenticated;
+  isAuthenticated: window.localStorage.getItem("accessToken") ? true : false,
+	setAuthenticatedState(status: boolean) {
+		this.isAuthenticated = status;
 	}
 })
