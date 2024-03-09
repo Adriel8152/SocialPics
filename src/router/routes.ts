@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import { Home } from '../views/auth';
+import { Create, Edit, Home, Post, Profile } from '../views/auth';
 // import { PrivateLayout } from '../views/layout';
 import { store } from '../store/store';
 import { Login, Register } from '../views';
@@ -50,6 +50,26 @@ const routes =  [
 				name: 'Home',
 				component: Home,
 				
+			},
+			{
+				path: '/create',
+				name: 'Create',
+				component: Create
+			},
+			{
+				path: '/edit',
+				name: 'Edit',
+				component: Edit
+			},
+			{
+				path: '/post',
+				name: 'Post',
+				component: Post
+			},
+			{
+				path: '/profile',
+				name: 'Profile',
+				component: Profile
 			},
 			{
 				path: '/:pathMatch(.*)*',

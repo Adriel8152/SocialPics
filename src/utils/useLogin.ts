@@ -25,7 +25,7 @@ export const useLogin = () => {
 		const token = generateToken({
 			name: data.name,
 			email: data.email,
-			username: `@${data.username}`,
+			username: data.username,
 			profileImg: data.profileImg,
 		})
 
