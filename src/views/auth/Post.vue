@@ -37,7 +37,7 @@ import { SkeletonCard } from '../../components';
 </script>
 
 <template>
-  <div class="w-11/12 max-w-[1000px] shadow justify-center items-center pt-8 overflow-hidden _container">
+  <div class="w-11/12 max-w-[1000px] shadow justify-center items-center py-8">
 
     <div class="flex flex-col items-center justify-center gap-4">
       <SkeletonCard v-if="loadingPostData" />
@@ -73,7 +73,4 @@ import { SkeletonCard } from '../../components';
 </template>
 
 <style scoped>
-  ._container {
-    height: calc(100vh - var(--header-height));
-  }
 </style>

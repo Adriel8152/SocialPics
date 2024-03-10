@@ -54,7 +54,7 @@
 
     <hr />
     
-    <div class="overflow-y-scroll w-full h-full mt-12 pb-48">
+    <div class="overflow-y-scroll w-full h-full pb-48">
       <div v-if="loadingPosts" class="flex flex-col px-8 m-auto w-full gap-8">
         <SkeletonCard />
         <SkeletonCard />

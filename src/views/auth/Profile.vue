@@ -66,7 +66,7 @@
 </script>
 
 <template>
-  <div class="w-11/12 max-w-[1000px] shadow justify-center items-center pt-8 overflow-hidden _container">
+  <div class="w-11/12 max-w-[1000px] shadow justify-center items-center pt-8">
 
     <div class="flex flex-col items-center justify-center gap-4 px-8">
       <span class="text-gray-500 text-3xl mb-2">Perfil</span>
@@ -86,12 +86,13 @@
       <div v-if="loadingPosts" class="grid grid-cols-3 gap-4 w-full">
         <div class="flex rounded-lg col-span-1 aspect-square animate-pulse bg-slate-400"></div>
         <div class="flex rounded-lg col-span-1 aspect-square animate-pulse bg-slate-400"></div>
-        <div class="flex rounded-lg col-span-1 aspect-square animate-pulse bg-slate-400"></div>
       </div>
-
-      <div v-if="!loadingPosts" class="grid grid-cols-3 gap-4 w-full">
+      
+      <div v-if="!loadingPosts" class="grid grid-cols-3 gap-4 my-2 w-full">
         <template v-for="picture in pictures">
-          <img @click="openPostDetails(picture.id)" class="flex rounded-lg col-span-1 h-full aspect-square object-cover cursor-pointer" :src="picture.path" />
+          <div @click="openPostDetails(picture.id)" class="flex rounded-lg col-span-1 h-full aspect-square object-cover space-x-4 overflow-hidden cursor-pointer">
+            <img class="hover:scale-110 transition-all" :src="picture.path" />
+          </div>
         </template>
 			</div>
 
@@ -105,7 +106,4 @@
 </template>
 
 <style scoped>
-  ._container {
-    height: calc(100vh - var(--header-height));
-  }
 </style>
