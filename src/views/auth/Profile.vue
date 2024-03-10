@@ -95,6 +95,10 @@
         </template>
 			</div>
 
+      <div class="text-gray-500 font-semibold" v-if="!loadingPosts && pictures.length === 0">
+        Actualmente no tiene publicaciones para mostrar.
+      </div>
+
     </div>
   </div>
 

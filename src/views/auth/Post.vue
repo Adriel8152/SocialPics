@@ -32,7 +32,7 @@ import { SkeletonCard } from '../../components';
   const handleDelete = async () => {
     await deleteDoc(doc(db, "posts", `${route.params.id}`));
 
-    router.push( {name: 'Edit', params: { id: postData.value.id } } );
+    router.push( '/home' );
   }
 </script>
 

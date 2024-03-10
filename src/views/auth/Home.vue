@@ -47,16 +47,22 @@
 <template>
   <div class="w-11/12 max-w-[1000px] shadow justify-center items-center overflow-hidden _container">
 
-    <div class="flex flex-col items-center justify-center gap-4">
+    <div class="flex flex-col items-center justify-center my-4 gap-4">
       <span class="text-gray-500 text-3xl">Publicaciones</span>
       <MainButton @click="router.push('/create')" name-color="coral" class="min-w-80">Agregar publicación</MainButton>
     </div>
+
+    <hr />
     
     <div class="overflow-y-scroll w-full h-full mt-12 pb-48">
       <div v-if="loadingPosts" class="flex flex-col px-8 m-auto w-full gap-8">
         <SkeletonCard />
         <SkeletonCard />
         <SkeletonCard />
+      </div>
+  
+      <div class="text-center text-gray-500 font-semibold" v-if="!loadingPosts && posts.length === 0">
+        ¡Se el primero en publicar algo!
       </div>
       
       <div v-if="!loadingPosts" class="flex flex-col px-8 m-auto w-full gap-8 mt-8">
