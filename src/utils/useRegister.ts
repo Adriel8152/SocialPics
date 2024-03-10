@@ -1,6 +1,5 @@
 import { addDoc, collection, getDocs, query, where } from 'firebase/firestore';
 import { db } from '../../firebase/firestoreconfig';
-import { UserData } from './interfaces';
 
 interface Response {
 	type: 'error' | 'success' ,
@@ -61,7 +60,7 @@ export const useRegister = () => {
 		return { type: 'success', message: '' };
 	}
 
-	const registerUser = async (userData: UserData): Promise<Response> => {
+	const registerUser = async (userData: any): Promise<Response> => {
 
 		const userDataDb = {
 			name: userData.name,

@@ -3,7 +3,6 @@ import { store } from "../store/store";
 import { useToken } from "./useToken";
 import { collection, getDocs, query, where } from "firebase/firestore";
 import { db } from "../../firebase/firestoreconfig";
-import { UserData } from "./interfaces";
 
 interface Response {
 	type: 'error' | 'success' ,
@@ -15,7 +14,7 @@ export const useLogin = () => {
 	const router = useRouter();
 	const { generateToken } = useToken();
 
-	const login = (data: UserData) => {
+	const login = (data: any) => {
 		const token = generateToken({
 			id: data.id,
 			name: data.name,
