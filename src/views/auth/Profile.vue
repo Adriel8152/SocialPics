@@ -28,6 +28,14 @@
       pictures.value.push({path: post.picture, id: doc.id})
     });
 
+    
+    // Algoritmo para ordenar los posts
+    pictures.value.sort((a: any, b: any) => {
+        if (a.createdAt < b.createdAt) return -1;
+        if (a.createdAt > b.createdAt) return 1;
+        return 0;
+    }).reverse();
+
     loadingPosts.value = false;
   });
 

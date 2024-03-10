@@ -23,7 +23,7 @@ import { useRouter } from 'vue-router';
 
 	<figure class="border border-gray-100 shadow rounded-lg max-w-lg w-full mx-auto overflow-hidden">
 		<div @click="openPostDetails" class="w-full min-h-40 flex space-x-4 overflow-hidden cursor-pointer">
-			<img class="hover:scale-110 transition-all" :src="props.postImg"  />
+			<img class="hover:scale-110 transition-all w-full" :src="props.postImg"  />
 		</div>
 		<figcaption class="flex flex-col p-4 gap-4">
 			<div class="grid items-center gap-5 space-x- grid-cols-4">

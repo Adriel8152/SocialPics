@@ -12,24 +12,25 @@
 
   async function getPosts() {
     try {
-      // Obtener una referencia a la colección "posts"
       const postsRef = collection(db, "posts");
 
-      // Obtener una consulta de todos los documentos en la colección
       const queryRef = query(postsRef);
 
-      // Obtener los documentos de la consulta
       const querySnapshot = await getDocs(queryRef);
 
-      // Recorrer los documentos y mostrar sus datos
       querySnapshot.forEach((doc) => {
-        console.log(doc.id)
-
         posts.value.push({
           id: doc.id,
           ...doc.data()
         })
       });
+
+      // Algoritmo para ordenar los posts
+      posts.value.sort((a: any, b: any) => {
+					if (a.createdAt < b.createdAt) return -1;
+					if (a.createdAt > b.createdAt) return 1;
+					return 0;
+			}).reverse();
 
     } catch(error) {
       console.log(error);
@@ -61,7 +62,7 @@
         <SkeletonCard />
       </div>
   
-      <div class="text-center text-gray-500 font-semibold" v-if="!loadingPosts && posts.length === 0">
+      <div class="text-center text-gray-500 font-semibold my-2" v-if="!loadingPosts && posts.length === 0">
         ¡Se el primero en publicar algo!
       </div>
       
