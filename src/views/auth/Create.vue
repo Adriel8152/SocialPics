@@ -46,6 +46,7 @@
             userId: userData.id,
             // likes: 0,
             picture: imgUrl.value,
+            userImg: userData.profileImg,
             username: userData.username,
           });
 

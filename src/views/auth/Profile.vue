@@ -59,7 +59,7 @@
 
       saveToken(newToken);
 
-      router.go(0);
+      router.push('/profile');
     }
   }
 

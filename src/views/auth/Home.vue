@@ -67,7 +67,7 @@
       
       <div v-if="!loadingPosts" class="flex flex-col px-8 m-auto w-full gap-8 mt-8">
         <template v-for="post in posts">
-          <PublicationCard :img="post.picture" :username="post.username" :description="post.description" :likes="0" :seconds="post.createdAt.seconds" :id="post.id" />
+          <PublicationCard :userImg="post.userImg" :postImg="post.picture" :username="post.username" :description="post.description" :likes="0" :seconds="post.createdAt.seconds" :id="post.id" />
         </template>
       </div>
     </div>
