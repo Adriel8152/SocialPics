@@ -1,18 +1,49 @@
 # Vue 3 + TypeScript + Vite
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+SocialMedia hecho con Vue y TS.
 
-## Recommended IDE Setup
+TODO:
+1. Encriptar contraseña al registrar usuario con bcrypt
+2. Poner estatus de cargando en el resto de botones
+3. Usar un token real con jwtoken
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+## Instalación
 
-## Type Support For `.vue` Imports in TS
+Se puede clonar este repositorio utilizando el siguiente comando:
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+```git clone https://github.com/Adriel8152/vue-todoapp.git```
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
+Se debe tener [Node.js](https://nodejs.org/en/download) para poder utilizar npm (Node Package Manager) y las respectivas dependencias del proyecto.
 
-1. Disable the built-in TypeScript Extension
-   1. Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-   2. Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+Para instalar las dependencias, se debe ejecutar el comando:
+
+```npm install```
+
+## Información del Proyecto
+
+Primer proyecto con Vue y TS con fines de aprendizaje.
+
+## Entorno de desarrollo
+
+Para ejecutar la aplicación en un entorno de desarrollo, se puede utilizar el siguiente comando:
+
+```npm run dev```
+
+
+Se iniciará la aplicación en un servidor local (Generalmente: [http://localhost:5173](http://localhost:5173)).
+
+## Instrucciones de Construcción (Build)
+
+A continuación se presentan los pasos para construir la aplicación y prepararla para su implementación en un entorno de producción:
+
+1. **Instalación de Dependencias (Opcional):**
+Antes de realizar la construcción, todas las dependencias deben estar instaladas ejecutando el siguiente comando en la terminal o línea de comandos:
+
+```npm install```
+
+2. **Construcción de la Aplicación:**
+Para hacer el build de la aplicación y generar los archivos optimizados para producción, se debe ejecutar el siguiente comando:
+
+```npm run build```
+
+Este comando compilará y optimizará la aplicación para su despliegue en un entorno de producción. Se debe verigicar que no hay errores ni problemas durante el proceso de compilación.
