@@ -30,7 +30,7 @@
 			if( response.type === 'error' ) throw new Error(response.message);
 			
 			login({
-				email: registerFormValues.value.email,
+				email: (registerFormValues.value.email).toLocaleLowerCase(),
 				name: registerFormValues.value.name,
 				profileImg: registerFormValues.value.profileImg,
 				username: registerFormValues.value.username,
@@ -100,7 +100,7 @@
 		<div class="flex flex-col gap-4 w-full">
 			<UnloggedInput v-model="registerFormValues.email" placeholder="Correo electrónico" type="email" />
 			<UnloggedInput v-model="registerFormValues.name" placeholder="Nombre completo" type="text" />
-			<UnloggedInput v-model="registerFormValues.username" placeholder="@usuario" type="text" />
+			<UnloggedInput v-model="registerFormValues.username" placeholder="Ingrese su usuario (sin @)" type="text" />
 			<UnloggedInput v-model="registerFormValues.password" placeholder="Contraseña" type="password" />
 			<UnloggedInput v-model="registerFormValues.confirmPassword" placeholder="Confirmar contraseña" type="password" />
 		</div>
