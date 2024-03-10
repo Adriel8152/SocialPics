@@ -744,6 +744,10 @@ video {
   max-width: 32rem;
 }
 
+.flex-1 {
+  flex: 1 1 0%;
+}
+
 @keyframes pulse {
   50% {
     opacity: .5;

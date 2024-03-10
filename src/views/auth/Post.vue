@@ -37,14 +37,14 @@ import { SkeletonCard } from '../../components';
 </script>
 
 <template>
-  <div class="w-11/12 max-w-[1000px] shadow justify-center items-center py-8">
+  <div class="w-11/12 max-w-[1000px] shadow justify-center items-center py-8 flex-1">
 
     <div class="flex flex-col items-center justify-center gap-4">
       <SkeletonCard v-if="loadingPostData" />
 
       <figure v-if="!loadingPostData" class="border border-gray-100 shadow rounded-lg max-w-lg w-full mx-auto overflow-hidden">
         <div class="w-full min-h-40 flex space-x-4 overflow-hidden cursor-pointer">
-          <img class="hover:scale-110 transition-all" :src="postData.picture"  />
+          <img class="hover:scale-110 transition-all w-full" :src="postData.picture"  />
         </div>
         <figcaption class="flex flex-col p-4 gap-4">
           <div class="grid gap-5 space-x- grid-cols-4">

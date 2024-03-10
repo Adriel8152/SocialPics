@@ -67,14 +67,14 @@
 
       saveToken(newToken);
 
-      router.push('/profile');
+      router.go(0);
     }
   }
 
 </script>
 
 <template>
-  <div class="w-11/12 max-w-[1000px] shadow justify-center items-center pt-8">
+  <div class="w-11/12 max-w-[1000px] shadow justify-center items-center pt-8 flex-1">
 
     <div class="flex flex-col items-center justify-center gap-4 px-8">
       <span class="text-gray-500 text-3xl mb-2">Perfil</span>

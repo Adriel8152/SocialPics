@@ -41,7 +41,7 @@
 </script>
 
 <template>
-  <div class="w-11/12 max-w-[1000px] shadow justify-center items-center pt-8">
+  <div class="w-11/12 max-w-[1000px] shadow justify-center items-center pt-8 flex-1">
 
     <SkeletonCard v-if="loadingPostData" />
 
