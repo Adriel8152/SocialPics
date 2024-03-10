@@ -38,9 +38,6 @@
 
     router.go(-1);
   }
-
-  // TODO: Habilitar botón de eliminar foto
-
 </script>
 
 <template>
