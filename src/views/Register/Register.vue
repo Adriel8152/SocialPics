@@ -114,4 +114,3 @@
 
 <style scoped>
 </style>
-../../components../../../firebase/firestoreconfig
